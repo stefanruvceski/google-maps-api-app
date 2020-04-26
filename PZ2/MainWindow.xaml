@@ -1,0 +1,183 @@
+﻿<Window x:Class="PZ2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gmf="clr-namespace:GMap.NET.WindowsForms;assembly=GMap.NET.WindowsForms"
+        xmlns:gm="clr-namespace:GMap.NET;assembly=GMap.NET.Core"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:PZ2"
+        mc:Ignorable="d"
+        Title="PZ2" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="1080" Width="1920" WindowState="Maximized" >
+   
+    <Grid>
+        <Grid>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="1562,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonClearMap_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="CadetBlue"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">Clear</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="CornflowerBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonLoadAll_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="ForestGreen"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">All</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="188,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonLoadSubstations_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="ForestGreen"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">Substations</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="548,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonLoadSwitches_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="ForestGreen"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">Switches</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="366,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonLoadNodes_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="ForestGreen"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">Nodes</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="729,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonLoadLines_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="ForestGreen"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">Lines</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="46" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="1744,10,0,0" RenderTransformOrigin="0.46,0.42" Click="buttonExit_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="CadetBlue"/>
+                        <Setter Property="Content" Value="Clear"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="12" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,11">
+
+                                        <Label Foreground="White" HorizontalAlignment="Center" FontSize="18">Exit</Label>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="CornflowerBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <WindowsFormsHost Margin="0,51,0,0">
+				<gmf:GMapControl OnRouteClick="gMap_OnRouteClick"  x:Name="gMap"  Load="gMap_Load"/>
+
+            </WindowsFormsHost>
+        </Grid>
+    </Grid>
+</Window>
